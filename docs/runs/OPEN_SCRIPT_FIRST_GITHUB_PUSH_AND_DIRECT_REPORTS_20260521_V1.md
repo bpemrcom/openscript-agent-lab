@@ -21,8 +21,8 @@ Codex verified the current project state, confirmed SSH deploy key access via th
 - files changed:
   - docs/GITHUB_WORKFLOW.md
   - docs/runs/OPEN_SCRIPT_FIRST_GITHUB_PUSH_AND_DIRECT_REPORTS_20260521_V1.md
-- commit hash: pending until commit
-- status after: pending until push
+- commit hash: 6225dd2dc9c3d1d0e0d4e0b6e0b1bcb5dbf4d35a
+- status after: ## main...origin/main
 
 ## SSH check
 - ssh alias present: yes
@@ -33,10 +33,10 @@ Codex verified the current project state, confirmed SSH deploy key access via th
 
 ## Push check
 - push attempted: yes
-- push success: pending until push
-- local HEAD: pending until commit
-- remote HEAD: pending until push
-- remote matches local HEAD: pending until push
+- push success: yes
+- local HEAD: 6225dd2dc9c3d1d0e0d4e0b6e0b1bcb5dbf4d35a
+- remote HEAD: 6225dd2dc9c3d1d0e0d4e0b6e0b1bcb5dbf4d35a
+- remote matches local HEAD: yes
 
 ## Shared workflow confirmation
 - Codex writes reports to `docs/runs`

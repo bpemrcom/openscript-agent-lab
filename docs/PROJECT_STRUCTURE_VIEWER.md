@@ -1,6 +1,6 @@
 # Project Structure Viewer
 
-Страница структуры проекта нужна, чтобы ученик рано увидел понятную карту папок и файлов, не открывая содержимое файлов и не попадая в основной UI Agent Lab.
+Страница структуры проекта нужна, чтобы быстро и безопасно показать карту папок и файлов, не открывая содержимое файлов и не подключая основной UI Agent Lab.
 
 ## Что показывает
 
@@ -14,8 +14,7 @@
 - редактирование;
 - скачивание;
 - абсолютные пути;
-- секретные имена и опасные служебные каталоги;
-- `localhost` как пользовательский адрес.
+- секретные имена и опасные служебные каталоги.
 
 ## Что скрывается
 
@@ -38,6 +37,28 @@
 - `credential`
 - `credentials`
 
+## Access policy
+
+Для текущей Windows VM допустимы несколько режимов доступа:
+
+- Local VM URL:
+  `http://127.0.0.1:<PORT>/project-structure/`
+  Используется, если пользователь открывает браузер на той же Windows VM.
+
+- LAN URL:
+  `http://<WINDOWS_VM_LAN_IP>:<PORT>/project-structure/`
+  Используется, если пользователь открывает страницу с другого устройства в той же локальной сети.
+
+- Public/tunnel/domain URL:
+  `http://<PUBLIC_IP_OR_DOMAIN>:<PORT>/project-structure/`
+  или tunnel/domain URL.
+  Используется только если нужен доступ извне.
+
+Текущий доказанный режим должен фиксироваться в отчётах.
+
+current_access_url: not_verified_yet
+software_policy: tool_agnostic
+
 ## Локальная проверка
 
 Для технической проверки можно запустить stdlib HTTP server и проверить:
@@ -46,13 +67,15 @@
 - `GET /api/project-tree`
 - `GET /project-structure/`
 
-Проверка с `localhost` разрешена только для Codex/internal proof.
+Локальный check допускает `localhost` или `127.0.0.1`, если пользователь работает на той же Windows VM.
 
 ## Будущий user-facing URL
 
-Когда публичный серверный адрес будет доказан, пользователь должен открывать:
+Когда адрес будет доказан, пользователь должен открывать один из вариантов:
 
-`http://<SERVER_PUBLIC_IP>:<PORT>/project-structure/`
+- `http://127.0.0.1:<PORT>/project-structure/`
+- `http://<WINDOWS_VM_LAN_IP>:<PORT>/project-structure/`
+- `http://<PUBLIC_IP_OR_DOMAIN>:<PORT>/project-structure/`
 
 ## Примечание
 
@@ -61,5 +84,4 @@
 ## Windows VM
 
 - Локальная проверка на Windows VM выполняется через PowerShell scripts из `scripts/windows/`.
-- Публичный URL пока `not_proven_yet`, пока не доказан внешний адрес.
 - Linux nginx/systemd сейчас не target для этого этапа.

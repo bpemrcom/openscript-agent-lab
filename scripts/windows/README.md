@@ -8,7 +8,9 @@
 powershell -ExecutionPolicy Bypass -File scripts/windows/start_project_structure.ps1 -Host 127.0.0.1 -Port 8765
 ```
 
-Скрипт запускает Python backend без admin-доступа, без firewall-изменений и без service-установки.
+Локальный URL для той же Windows VM:
+
+`http://127.0.0.1:8765/project-structure/`
 
 ## Локальная проверка
 
@@ -16,15 +18,26 @@ powershell -ExecutionPolicy Bypass -File scripts/windows/start_project_structure
 powershell -ExecutionPolicy Bypass -File scripts/windows/check_project_structure.ps1 -Port 8765
 ```
 
-Проверка использует `localhost` только как internal proof.
+## LAN URL
+
+Если браузер открыт не на самой VM, но в той же локальной сети, можно использовать:
+
+`http://<WINDOWS_VM_LAN_IP>:8765/project-structure/`
 
 ## Про внешний доступ
 
-Для доступа извне позже понадобятся:
+Если нужен доступ извне, позже можно выбрать один из вариантов:
 
-- публичный IP или домен;
+- public IP или domain;
 - port forwarding;
 - Windows Firewall inbound rule;
-- решение о постоянном запуске через Scheduled Task, Windows Service или NSSM.
+- Scheduled Task;
+- Windows Service;
+- NSSM;
+- Cloudflare Tunnel;
+- ngrok;
+- IIS;
+- nginx;
+- другой безопасный reverse proxy.
 
-Пока публичный адрес не доказан, user-facing URL остаётся `not_proven_yet`.
+Выбор инструментов делается по фактической среде и отдельному prompt. Пока такие настройки не были отдельно разрешены, менять их не нужно.

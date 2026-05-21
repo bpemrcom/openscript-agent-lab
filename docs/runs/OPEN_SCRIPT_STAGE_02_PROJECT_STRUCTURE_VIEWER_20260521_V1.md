@@ -22,6 +22,7 @@ Created a safe Stage 2 project structure viewer with a stdlib-only backend, a Ru
 - project_structure/static/project-structure.js
 - tests/test_project_structure_tree.py
 - tests/test_project_structure_security.py
+- tests/__init__.py
 - docs/PROJECT_STRUCTURE_VIEWER.md
 - docs/CURRENT_STATUS.md
 - docs/runs/OPEN_SCRIPT_STAGE_02_PROJECT_STRUCTURE_VIEWER_20260521_V1.md
@@ -43,10 +44,10 @@ Created a safe Stage 2 project structure viewer with a stdlib-only backend, a Ru
 
 ## Checks
 - tests_command: python -m unittest discover -s tests
-- tests_result: not_run
-- smoke_healthz: not_run
-- smoke_api_project_tree: not_run
-- smoke_project_structure_page: not_run
+- tests_result: passed
+- smoke_healthz: passed
+- smoke_api_project_tree: passed
+- smoke_project_structure_page: passed
 
 ## URL
 - localhost_used_only_for_internal_check: yes
@@ -56,10 +57,10 @@ Created a safe Stage 2 project structure viewer with a stdlib-only backend, a Ru
 
 ## Git
 - branch: main
-- commit_hash: pending
-- pushed_to_origin_main: no
-- remote_matches_local_head: unknown
-- git_status_after: pending
+- commit_hash: e7f1fbd29ef85349de5e3806ecb605a1e2a3e20d
+- pushed_to_origin_main: yes
+- remote_matches_local_head: yes
+- git_status_after: ## main...origin/main
 
 ## Safety
 - private_key_printed: no

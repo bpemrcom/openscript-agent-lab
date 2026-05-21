@@ -52,8 +52,14 @@
 
 Когда публичный серверный адрес будет доказан, пользователь должен открывать:
 
-`http://<SERVER_PUBLIC_IP>/project-structure/`
+`http://<SERVER_PUBLIC_IP>:<PORT>/project-structure/`
 
 ## Примечание
 
 Страница не использует основной UI Agent Lab и не требует сборки или npm.
+
+## Windows VM
+
+- Локальная проверка на Windows VM выполняется через PowerShell scripts из `scripts/windows/`.
+- Публичный URL пока `not_proven_yet`, пока не доказан внешний адрес.
+- Linux nginx/systemd сейчас не target для этого этапа.
